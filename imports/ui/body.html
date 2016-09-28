@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Hot Stocks</h1>
+    </header>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Chg</th>
+          <th>Vol</th>
+          <th>High</th>
+        </tr>
+      </thead>
+      <tbody>
+          {{#each hot_stocks}}
+            {{> hot_stock}}
+          {{/each}}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<template name="hot_stock">
+  <tr>
+      <td>{{name}}</td>
+      <td>{{chg}}</td>
+      <td>{{vol}}</td>
+      <td>{{high}}</td>
+  </tr>
+</template>
