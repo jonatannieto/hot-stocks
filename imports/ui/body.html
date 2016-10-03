@@ -4,14 +4,15 @@
       <h1>Hot Stocks</h1>
     </header>
 
-
     <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th>Name</th>
+          <th>Actual</th>
           <th>Chg</th>
           <th>Vol</th>
           <th>High</th>
+          <th>Low</th>
         </tr>
       </thead>
       <tbody>
@@ -25,9 +26,12 @@
 
 <template name="hot_stock">
   <tr onclick="window.document.location='';">
+      {{hottest name chg}}
       <td>{{name}}</td>
-      <td>{{chg}}</td>
+      <td style="font-weight: bold;">{{actual}}</td>
+      <td style="{{#if chgRate chg 0}} color: green; {{else}} color: red; {{/if}} font-weight: bold;">{{chg}}%</td>
       <td>{{vol}}</td>
       <td>{{high}}</td>
+      <td>{{low}}</td>
   </tr>
 </template>
